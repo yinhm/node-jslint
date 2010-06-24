@@ -1,4 +1,4 @@
-/*global require, process */
+/*global require, process*/
 
 var sys = require("sys"),
     puts = sys.puts,
