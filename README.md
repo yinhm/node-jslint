@@ -1,41 +1,25 @@
-node-jslint
-===========
+# node-jslint
 
-Easily use [jslint][] from the command line. Pass it the JS file you'd like to lint. For example:
+Easily use [JSLint][] from the command line.
 
-    jslint foo.js
+    jslint app.js
+    jslint lib/worker.js lib/server.js # Multiple files
+    jslint --white --onevar --regexp app.js # All JSLint options supported
+    jslint --bitwise false app.js # Defaults to true, but you can specify false
+    jslint --goodparts --undef false app.js # The Good Parts, except undef
+    jslint -gp app.js # Shorthand for --goodparts: -gp
+    find . -name "*.js" -print0 | xargs -0 jslint # JSLint your entire project
 
-It assumes [nodejs][] globals and tolerates shebangs.
+## Install
 
-Installation
-------------
+    npm install jslint
 
-You'll need [nodejs][], which is easy to install on OS X with [homebrew][]:
+## Self-Lint
 
-    curl -L http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /usr/local
-    brew install node
+    make lint
 
-Then install node-jslint to /usr/local with the handy installer:
+## License
 
-	node http://github.com/reid/node-jslint/raw/master/install.js
-	
-**WARNING**: You're running script straight from the internet. Only tested on OS X.
+See LICENSE file.
 
-License
--------
-
-You can modify, copy and redistribute this software under the WTFPL, Version 2.
-See <http://sam.zoy.org/wtfpl/COPYING> for details.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-
-[jslint]: http://jslint.com/
-[nodejs]: http://nodejs.org/
-[homebrew]: http://github.com/mxcl/homebrew
+[JSLint]: http://jslint.com/
