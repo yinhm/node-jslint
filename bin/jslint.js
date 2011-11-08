@@ -7,11 +7,11 @@ var fs = require("fs");
 
 function commandOptions () {
     var flags = [
-        'adsafe', 'bitwise', 'browser', 'cap', 'continue', 'css',
-        'debug', 'devel', 'es5', 'evil', 'forin', 'fragment',
-        'newcap', 'node', 'nomen', 'on', 'onevar', 'passfail',
-        'plusplus', 'regexp', 'rhino', 'undef', 'safe', 'windows',
-        'strict', 'sub', 'white', 'widget', 'goodparts', 'json'
+        'adsafe', 'bitwise', 'browser', 'cap', 'confusion', 'continue', 'css',
+        'debug', 'devel', 'eqeq', 'es5', 'evil', 'forin', 'fragment', 'module',
+        'newcap', 'node', 'nomen', 'on', 'onevar', 'passfail', 'plusplus',
+        'regexp', 'rhino', 'safe', 'sloppy', 'sub', 'undef', 'unparam', 'vars',
+        'white', 'widget', 'windows'
     ];
 
     var commandOpts = {
@@ -28,14 +28,8 @@ function commandOptions () {
     return commandOpts;
 }
 
-var options = commandOptions(),
-    shorthandOptions = {
-        "good" : ["--goodparts"],
-        "gp" : ["--goodparts"]
-    },
-    shorthands = Object.keys(shorthandOptions);
-
-var parsed = nopt(options, shorthandOptions);
+var options = commandOptions();
+var parsed = nopt(options);
 
 function die(why) {
     console.warn(why);
