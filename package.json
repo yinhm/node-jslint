@@ -1,5 +1,5 @@
 {
-    "name": "jslint",
+    "name": "jslint-emacs",
     "description": "The JavaScript Code Quality Tool",
     "homepage": "https://github.com/reid/node-jslint",
     "keywords": [
@@ -15,7 +15,7 @@
         "Anders Conbere <aconbere@gmail.com>"
     ],
     "bin": {
-        "jslint": "./bin/jslint.js"
+        "jslint-emacs": "./bin/jslint-emacs.js"
     },
     "dependencies": {
         "nopt": "~1.0.0"
